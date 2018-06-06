@@ -11,28 +11,22 @@ namespace MergeLinkedLists.Tests
         {
             // Arrange
             var list1 = new LinkedList();
-            list1.Add(new Node(2));
-            list1.Add(new Node(5));
-            list1.Add(new Node(8));
-            list1.Add(new Node(14));
-            list1.Add(new Node(36));
+            foreach (var n in new[] { 2, 5, 8, 14, 36 })
+            {
+                list1.Add(new Node(n));
+            }
 
             var list2 = new LinkedList();
-            list2.Add(new Node(1));
-            list2.Add(new Node(5));
-            list2.Add(new Node(10));
-            list2.Add(new Node(48));
+            foreach (var n in new[] { 1, 5, 10, 48 })
+            {
+                list2.Add(new Node(n));
+            }
 
             var expectedOutput = new LinkedList();
-            expectedOutput.Add(new Node(1));
-            expectedOutput.Add(new Node(2));
-            expectedOutput.Add(new Node(5));
-            expectedOutput.Add(new Node(5));
-            expectedOutput.Add(new Node(8));
-            expectedOutput.Add(new Node(10));
-            expectedOutput.Add(new Node(14));
-            expectedOutput.Add(new Node(36));
-            expectedOutput.Add(new Node(48));
+            foreach (var n in new[] { 1, 2, 5, 5, 8, 10, 14, 36, 48 })
+            {
+                expectedOutput.Add(new Node(n));
+            }
 
             // Act
             var actualOutput = Program.Merge(list1.Head, list2.Head);

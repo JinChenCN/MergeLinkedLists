@@ -5,7 +5,7 @@ namespace MergeLinkedLists
 {
     public class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             try
             {
@@ -28,11 +28,11 @@ namespace MergeLinkedLists
             }
             catch (FormatException)
             {
-                Console.WriteLine("The input format is invalid.");
+                Console.WriteLine("The input format was invalid.");
             }
             catch (Exception)
             {
-                Console.WriteLine("Error happens when merging.");
+                Console.WriteLine("An error happened when merging.");
             }
 
             Console.ReadKey();
